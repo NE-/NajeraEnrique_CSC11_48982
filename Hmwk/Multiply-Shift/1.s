@@ -1,7 +1,10 @@
 /*
 	File:    mnthToYrs.s
 	Author:  Enrique Najera
-	Purpose: Convert months to years
+	Purpose: Convert months to years  months->1 Byte, 
+	         conversion->3 Bytes, 
+			 Result->1 Byte then output years
+	         months = 88
 	21 September 2015
 */
 
