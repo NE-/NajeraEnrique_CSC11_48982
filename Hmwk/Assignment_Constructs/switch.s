@@ -1,7 +1,7 @@
 /*
-	File: switch.s
-	Author: Enrique Najera
-	Purpose: if statement in ARM asm
+	File:    switch.s
+	Author:  Enrique Najera
+	Purpose: switch statement in ARM asm
 	07 October 2015
  */
 

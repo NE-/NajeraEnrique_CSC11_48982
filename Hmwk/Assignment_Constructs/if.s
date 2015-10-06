@@ -1,6 +1,6 @@
 /*
-	File: if.s
-	Author: Enrique Najera
+	File:    if.s
+	Author:  Enrique Najera
 	Purpose: if statement in ARM asm
 	07 October 2015
  */

@@ -1,7 +1,7 @@
 /*
-	File: ifelse.s
-	Author: Enrique Najera
-	Purpose: if statement in ARM asm
+	File:    ifelse.s
+	Author:  Enrique Najera
+	Purpose: if else statement in ARM asm
 	07 October 2015
  */
 
