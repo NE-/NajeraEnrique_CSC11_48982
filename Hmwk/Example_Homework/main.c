@@ -1,5 +1,5 @@
 /*
- * File:    main.cpp
+ * File:    main.c
  * Author   Enrique Najera
  * Purpose: Convert cout/cin -> printf/scanf,
  *                  variables to registers,
