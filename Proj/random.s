@@ -9,6 +9,8 @@
 
 .balign 4
 message: .asciz "_%d_"
+winMsg:  .asciz "WIN!!"
+loseMsg: .asciz "LOSE!!"
 
 .text
 
@@ -92,8 +94,40 @@ scaleRight:
 	POP {LR}
 	BX LR
 
+win:
+    /* Output win */
+	LDR R0, address_of_winMsg
+	BL printf
+
+	/* Multiply by 2,3,or 4 */
+	CMP R0, #1
+	BEQ _2x
+	CMP R0, #2
+	BEQ _3x
+	CMP R0, #3
+	BEQ _4x
+	BGT lose
+
+	_2x:
+	    MOV R1, R1, LSL #1
+	_3x:
+	    MOV R1, R1, LSL #2
+	_4x:
+	    MOV R1, R1, LSL #3
+
+	BX LR
+
+lose:
+    LDR R0, address_of_loseMsg
+	BL printf
+
+	/* Subtract coinIn from coinAmount */
+	BX LR
+
 /* References */
 address_of_message: .word message
+address_of_winMsg:  .word winMsg
+address_of_loseMsg: .word loseMsg
 
 /* External */
 .global printf
