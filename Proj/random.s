@@ -1,5 +1,13 @@
+/*
+ * File: random.s
+ * Author: Copied from class example
+ * Purpose: Generate random number
+ * 06 November 2015
+ */
+
 .data
 
+.balign 4
 message: .asciz "_%d_"
 
 .text
@@ -84,6 +92,7 @@ scaleRight:
 	POP {LR}
 	BX LR
 
+/* References */
 address_of_message: .word message
 
 /* External */

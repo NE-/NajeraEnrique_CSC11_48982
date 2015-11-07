@@ -33,8 +33,6 @@ spin:
 	LDR R1, address_of_slots
 	LDR R2, address_of_slots
 	LDR R3, address_of_slots
-	
-	//BL random
 
 printSpin:
     /* Convert numbers */
@@ -52,6 +50,7 @@ printSpin:
 
 	BAL game_loop
 
+/* References */
 address_of_spinMsg: .word spinMsg
 address_of_spinOut: .word spinOut
 address_of_slots:   .word slots
@@ -62,3 +61,4 @@ address_of_escape:  .word escape
 .global player
 .global game_loop
 .global random
+

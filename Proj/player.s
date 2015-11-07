@@ -7,9 +7,11 @@
 
 .data
 
+/* Coins at start of game */
 .balign 4
 coinAmount: .word 100
 
+/* How many coins does the player input */
 .balign
 coinIn: .word 0
 
@@ -30,11 +32,12 @@ player:
 	LDR R1, address_of_return
 	STR LR, [R1]
 
+    /* Make sure player still has coins left */
     CMP R3, #1
 	BGT outputCoin
 	MOV R3, #100
 
-    outputCoin:
+outputCoin:
     /* Output total coins */
 	LDR R0, address_of_coinTTL
 	LDR R1, address_of_coinAmount
@@ -53,9 +56,8 @@ player:
 	LDR R2, address_of_coinAmount
 	LDR R2, [R2]
 
+    /* Subtract input from total */
 	SUBS R2, R2, R1
-
-//	SUBS R2, R2, R1
 
     /* Output coin amount */
 	LDR R0, address_of_coinTTL
@@ -66,12 +68,16 @@ player:
 	LDR LR, address_of_return
 	LDR LR, [LR]
 	BX LR
-address_of_coinAmount: .word coinAmount
-address_of_coinIn: .word coinIn
-address_of_coinPrompt: .word coinPrompt
-address_of_coinTTL: .word coinTTL
+
+/* References */
+address_of_coinAmount:        .word coinAmount
+address_of_coinIn:            .word coinIn
+address_of_coinPrompt:        .word coinPrompt
+address_of_coinTTL:           .word coinTTL
 address_of_scan_pattern_coin: .word scan_pattern_coin
 address_of_return: .word return
 
+/* External */
 .global printf
 .global scanf
+

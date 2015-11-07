@@ -30,7 +30,7 @@ main:
 
 	game_loop:
 
-        /* Prompt for spin or exit */
+        /* Prompt for spin, help, or exit */
 	    LDR R0, address_of_prompt
 	    BL printf
 
@@ -59,11 +59,14 @@ exit:
 	LDR R1, address_of_return
 	LDR LR, [R1]
 	BX LR
-address_of_prompt: .word prompt
-address_of_scan_pattern: .word scan_pattern
-address_of_number_read: .word number_read
-address_of_return: .word return
 
+/* References */
+address_of_prompt:        .word prompt
+address_of_scan_pattern: .word scan_pattern
+address_of_number_read:  .word number_read
+address_of_return:       .word return
+
+/* External */
 .global printf
 .global scanf
 
