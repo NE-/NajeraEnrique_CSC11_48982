@@ -7,8 +7,8 @@
 
 .data
 
-message1: .asciz "Type a number: "
-message2: .asciz "The factorial of %d is %d\n"
+message1: .asciz "Type a term: "
+message2: .asciz "The Fibonacci number of %d is %d\n"
 format: .asciz "%d"
 
 .text
