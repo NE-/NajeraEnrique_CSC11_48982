@@ -11,7 +11,7 @@ as -g -o help.o help.s
 as -g -o errorMsgs.o errorMsgs.s
 echo
 echo "Linking..."
-gcc -o main.EXE main.o wallet.o random.o randomDie.o gSelect.o help.o errorMsgs.o
+gcc -o mainAsm main.o wallet.o random.o randomDie.o gSelect.o help.o errorMsgs.o
 
 echo
 echo "Cleaning up..."
@@ -20,6 +20,6 @@ rm -vf *.o
 echo
 echo "Running..."
 echo
-./main.EXE
+./mainAsm
 echo
 
