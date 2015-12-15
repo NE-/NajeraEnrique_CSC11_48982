@@ -9,7 +9,7 @@
 
 /* Messages */
 .balign 4
-msgPrompt:  .asciz "____CROWN AND ANCHOR____\n1) Roll\n2) Help\n3) Exit\nWallet: %.2f\n"
+msgPrompt:  .asciz "____CROWN AND ANCHOR____\n1) Roll\n2) Help\n3) Exit\n"
 msgNoMoney: .asciz "\nOut of money!!!\n"
 msgExit: .asciz "\nGOODBYE!\n"
 
@@ -22,10 +22,14 @@ format: .asciz "%d"
 
     .global main
 	.global menu
+	.global menuOut
 main:
     PUSH {R4, LR}
 
 menu:
+    // Display wallet
+    B wallet
+menuOut:
     // Display choices 
     LDR R0, address_of_msgPrompt
 	BL printf
